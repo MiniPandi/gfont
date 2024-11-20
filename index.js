@@ -5,7 +5,6 @@ const app = express();
 const PORT = 5409;
 
 app.use(cors())
-app.use('/css', express.static('css'));
 app.use('/fonts', express.static('fonts'));
 
 
