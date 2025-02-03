@@ -6,7 +6,7 @@ const PORT = 5409;
 
 app.use(cors())
 app.use((req, res, next) => {
-    const filePath = path.join(process.env.NAME, req.path);
+    const filePath = path.join("/fonts", req.path);
     if (!fs.existsSync(filePath)) {
         return res.status(404).send("File not found");
     }
