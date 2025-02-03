@@ -7,8 +7,11 @@ const app = express();
 const PORT = 5409;
 
 app.use(cors())
+app.get('/', (req, res) => {
+    res.redirect('/fonts');
+})
 app.use((req, res, next) => {
-    const filePath = path.join("/fonts", req.path);
+    const filePath = path.join("./", req.path);
     if (!fs.existsSync(filePath)) {
         return res.status(404).send("File not found");
     }
